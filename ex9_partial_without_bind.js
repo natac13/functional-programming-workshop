@@ -3,7 +3,7 @@ var slice = Array.prototype.slice
 function logger(namespace) {
       return function() {
         var words_arr = slice.call(arguments);
-        words_arr.splice(0, 0, namespace)
+        words_arr.unshift(namespace)
         console.log.apply(null, words_arr);
     };
 }
